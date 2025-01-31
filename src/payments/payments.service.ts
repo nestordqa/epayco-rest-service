@@ -8,7 +8,7 @@ import { SoapResponse } from 'src/interfaces/soap-response.interface';
 export class PaymentsService {
     constructor(private readonly httpService: HttpService) {}
 
-    private readonly soapUrl = 'http://localhost:3000/api';
+    private readonly soapUrl = process.env.SOAP_URL;
 
     async makePayment(makePaymentDto: MakePaymentDto): Promise<SoapResponse> {
         try {

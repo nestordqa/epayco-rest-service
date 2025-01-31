@@ -11,7 +11,7 @@ import { CheckBalanceDto } from 'src/payments/dto/check-balance.dto';
 export class ClientsService {
     constructor(private readonly httpService: HttpService) {}
 
-    private readonly soapUrl = 'http://localhost:3000/api';
+    private readonly soapUrl = process.env.SOAP_URL;
 
     async registerClient(registerClientDto: RegisterClientDto): Promise<SoapResponse> {
         try {
